@@ -22,18 +22,24 @@ AI对话平台 —— 一个面向企业的多租户AI对话解决方案。
 📁 项目结构
 
 ```
-backend/
+aichat_backend/
 ├── app/
+│   ├── config/       # 数据库配置
 │   ├── models/       # 数据库模型
 │   ├── crud/         # 增删改查逻辑
 │   ├── routers/      # API路由
 │   ├── schemas/      # Pydantic模型
 │   └── utils/        # 工具函数
-frontend/
+aichat_frontend/
 ├── src/
 │   ├── api/          # 接口封装
 │   ├── components/   # 公共组件
 │   └── views/        # 页面
+│   └── utils/        # 工具函数
+│   └── store/        # VueX 状态管理
+│   └── router/       # 路由
+@/ai_chat.sql
+├── ../               # MySQL数据库查询
 ```
 
 
@@ -58,19 +64,28 @@ git clone [你的仓库地址]
 cd ai-chat-platform
 ```
 
-2. 后端启动
+2. 后端启动  在目录下
 
-```bash
-cd backend
+```bash 
 pip install -r requirements.txt
 # 配置.env（参考下方环境变量说明）
 uvicorn app.main:app --reload
 ```
 
-3. 前端启动
+3. 前端启动  在目录下
 
 ```bash
-cd frontend
 npm install
-npm run serve
+npm run dev
+```
+
+4. 数据库导入依赖
+```bash
+任何数据库可视化软件直接执行
+```
+
+5. 配置数据库账号密码和链接端口
+```bash
+在后端项目里面的config/db_conf.py里面配置 数据库链接
+在前端项目里面的utils/request.js里面配置 后端接口链接
 ```
