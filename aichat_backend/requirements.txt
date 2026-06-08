@@ -1,0 +1,24 @@
+# 基础 Web 框架
+fastapi>=0.100.0
+uvicorn>=0.23.0
+
+# 数据库相关
+sqlalchemy>=2.0.0
+aiomysql>=0.2.0
+
+# 密码安全
+passlib[bcrypt]==1.7.4
+
+# 智谱 AI SDK（二选一，推荐 zai-sdk）
+zai-sdk>=0.2.0
+# zhipuai>=2.0.0
+
+# 定时任务
+apscheduler>=3.10.0
+
+# 开发工具
+python-multipart>=0.0.6
+pydantic>=2.0.0
+
+# 测试工具（可选）
+# requests>=2.28.0  # 用于测试脚本
